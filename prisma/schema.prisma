@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model student {
+  id               Int       @id @default(autoincrement())
+  email            String
+  studentName      String?
+  fatherName       String?
+  dob              String?
+  passedGrade      String?
+  gradeToAttend    String?
+  campusTime       String?
+  intakes          String?
+  oldSchoolName    String?
+  city             String?
+  country          String
+  phoneNumber      String?
+  residentialAddress String?
+  createdAt        Float
+  token            String
+  url       String
+}
+model paymentInfo{
+   id               Int       @id @default(autoincrement())
+   email            String
+   studentName      String
+     amount_total   Int
+     status         String   
+     createdAt      Int       
+}
